@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+    <title>signup and signin form</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body>
+    <div class="forming">
+        <img src="usericon.png"/>
+        <h1>Sign Up Now</h1>
+        <form method="post" name="raju">
+            <input type="email" name="email" class="input-box" placeholder="enter email" required/><br>
+            <input type="password" name="pass1" class="input-box" placeholder="enter password" required/><br>
+            <input type="password" name="pass2" class="input-box" placeholder="enter confirm password" required/><br>
+            <p><span><input type="checkbox" required/></span>I agree to the terms of services</p><br>
+            <button type="button" class="signup-btn" onclick="return validate(),comple()">Sign up</button>
+            <hr>
+            <p class="or">OR</p>
+            <button type="button" class="facebook">Sign in with Google</button>
+            <p>Do you have an account ? <a href="login.html">Sign in</a></p>
+        </form>
+    </div>
+    <script>
+        function validate(){
+            var a=document.raju.pass1.value;
+            var b=document.raju.pass2.value;
+            if(a.length<6){
+                alert("enter password above 6 charecters");
+                return false;
+            }
+            else if(a.length==b.length){
+                return true;
+            }
+            else{
+                alert("enter password and confirm password are same");
+                return false;
+            }
+        }
+        function comple(){
+            if(validate()==true){
+                alert("you are completed sign up successfully");
+                return true;
+            }
+        }
+    </script>
+    
+</body>
+</html>
